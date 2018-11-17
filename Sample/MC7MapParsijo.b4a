@@ -1,0 +1,192 @@
+﻿Build1=Default,b4a.example
+File1=main.bal
+File2=myloc_marker.png
+FileGroup1=Default Group
+FileGroup2=Default Group
+Group=Default Group
+IconFile=
+Library1=core
+Library2=mc7mapparsijoo
+ManifestCode='This code will be applied to the manifest file during compilation.~\n~'You do not need to modify it in most cases.~\n~'See this link for for more information: https://www.b4x.com/forum/showthread.php?p=78136~\n~AddManifestText(~\n~<uses-sdk android:minSdkVersion="5" android:targetSdkVersion="26"/>~\n~<supports-screens android:largeScreens="true" ~\n~    android:normalScreens="true" ~\n~    android:smallScreens="true" ~\n~    android:anyDensity="true"/>)~\n~SetApplicationAttribute(android:icon, "@drawable/icon")~\n~SetApplicationAttribute(android:label, "$LABEL$")~\n~CreateResourceFromFile(Macro, Themes.DarkTheme)~\n~'End of default text.~\n~AddApplicationText(~\n~<meta-data android:name="com.google.android.gms.version"~\n~  android:value="@integer/google_play_services_version"/>~\n~)
+Module1=Starter
+NumberOfFiles=2
+NumberOfLibraries=2
+NumberOfModules=1
+Version=8.5
+@EndOfDesignText@
+#Region  Project Attributes 
+	#ApplicationLabel: MC7MapParsijooB4A
+	#VersionCode: 1
+	#VersionName: 1.1
+	'SupportedOrientations possible values: unspecified, landscape or portrait.
+	#SupportedOrientations: unspecified
+	#CanInstallToExternalStorage: False
+#End Region
+#Region  Activity Attributes 
+	#FullScreen: False
+	#IncludeTitle: True
+#End Region
+
+#AdditionalRes: ..\res
+
+Sub Process_Globals
+	'These global variables will be declared once when the application starts.
+	'These variables can be accessed from all modules.
+
+End Sub
+Sub Globals
+	'These global variables will be redeclared each time the activity is created.
+	'These variables can only be accessed from this module.
+	Private MC7MapParsijoo As MC7MapParsijoo
+	Private OPT As MC7MapParsijooOptions
+	Dim GeoPoint As MC7MapParsijooGeoPoint
+	
+	Dim Marker As MC7MapParsijooMarker
+	Dim MarkerSelector As MC7MapParsijooMarker
+	Dim Polygon As MC7MapParsijooPolygon
+	Dim Polygon2 As MC7MapParsijooPolygon
+	Dim PolyLine As MC7MapParsijooPolyLine
+	Dim BoundingBox As MC7MapParsijooBoundingBox
+	
+	Private Button1 As Button
+	Private Button2 As Button
+	Private Button3 As Button
+	Private Button4 As Button
+	Private Button5 As Button
+	Private Button6 As Button
+	Private Button8 As Button
+	Private Button9 As Button
+End Sub
+
+Sub Activity_Create(FirstTime As Boolean)
+	'Do not forget to load the layout file created with the visual designer. For example:
+	Activity.LoadLayout("main")
+
+	MC7MapParsijoo.setOnMapClickListener
+	MC7MapParsijoo.setOnMapLoad
+	MC7MapParsijoo.ShowMyLocationButton(True)
+	MC7MapParsijoo.ShowMyLocationButtonCallBack(True)
+End Sub
+
+Sub Activity_Resume
+
+End Sub
+Sub Activity_Pause (UserClosed As Boolean)
+
+End Sub
+
+
+
+Sub Button1_Click
+	
+	Dim draw As BitmapDrawable
+	draw.Initialize(LoadBitmap(File.DirAssets , "myloc_marker.png"))
+	Marker.Initialize(MC7MapParsijoo , "Marker")
+	Marker.setTitle("Hello!").setPosition2(35.70145814888389 , 51.419167864192644).setSnippet("Friends!").setDraggable(True).setFlat(True).setIcon(draw).setOnMarkerClickListener.setOnMarkerDragListener
+	MC7MapParsijoo.addMarker(Marker , "Marker")
+	
+	MC7MapParsijoo.animateToPosition(35.70145814888389 , 51.419167864192644)
+	MC7MapParsijoo.Zoom = OPT.ZL_City_3
+End Sub
+
+Sub Button11_Click
+	GeoPoint.Initialize(35.69601915505993 , 51.41008040329578)
+	MC7MapParsijoo.addGeoPoint(GeoPoint,"GeoPoint")
+	
+	MC7MapParsijoo.animateToPosition(35.69601915505993 , 51.41008040329578)
+	MC7MapParsijoo.Zoom = OPT.ZL_City_3
+End Sub
+
+Sub Button2_Click
+	Polygon.Initialize(MC7MapParsijoo)
+	Polygon.addPoint2(31.81462, 54.35277).addPoint2(31.81983, 54.36024).addPoint2(31.81086, 54.36522).addPoint2(31.81236, 54.35505).setStrokeColor(Colors.Red).setStrokeWidth(3dip).setFillColor(Colors.ARGB(100 , 75, 60, 49))
+	MC7MapParsijoo.addPolygon(Polygon)
+	
+	MC7MapParsijoo.animateToPosition(31.81462, 54.35277)
+	MC7MapParsijoo.Zoom = OPT.ZL_City_3
+End Sub
+
+Sub Button3_Click
+	Polygon2.Initialize(MC7MapParsijoo)
+	Polygon2.CreateCirlce(35.69552001232231 , 51.40420744445001 , 1000)
+	Polygon2.setStrokeColor(Colors.Blue).setStrokeWidth(3dip).setFillColor(Colors.ARGB(100 , 75, 60, 49))
+	MC7MapParsijoo.addPolygon(Polygon2)
+	
+	MC7MapParsijoo.animateToPosition(35.69552001232231 , 51.40420744445001)
+	MC7MapParsijoo.Zoom = OPT.ZL_City_3
+End Sub
+
+Sub Button4_Click
+	BoundingBox.Initialize
+	BoundingBox.addPoint2(31.91551, 54.32237).addPoint2(31.90240, 54.31009).addPoint2(31.89183, 54.32777).addPoint2(31.89627, 54.33721)
+	MC7MapParsijoo.addBoundingBox(BoundingBox , False)
+	MC7MapParsijoo.animateToPosition(31.91551, 54.32237)
+	MC7MapParsijoo.Zoom = OPT.ZL_City_3
+End Sub
+
+Sub Button5_Click
+	PolyLine.Initialize(MC7MapParsijoo)
+	PolyLine.addPoint2(35.69552001232231 , 51.40420744445001).addPoint2(35.69490994473367 , 51.419436163317556).addPoint2(35.69119397773187 , 51.43002114728375).setWidth(5dip).setColor(Colors.Red)
+	MC7MapParsijoo.addPolyLine(PolyLine)
+	MC7MapParsijoo.animateToPosition(35.69552001232231 , 51.40420744445001)
+	MC7MapParsijoo.Zoom = OPT.ZL_City_3
+End Sub
+
+Sub Button8_Click
+	MC7MapParsijoo.RemoveAllMarkers
+	MC7MapParsijoo.RemoveAllShapes
+End Sub
+
+
+Sub Button9_Click
+	MC7MapParsijoo.ShowCurrentLocation(True , True)
+End Sub
+Sub Button6_Click
+	If MarkerSelector.IsInitialized Then
+	MarkerSelector.CloseInfoWindow
+	MC7MapParsijoo.RemoveMarker(MarkerSelector)
+	MarkerSelector = Null
+	End If
+End Sub
+
+
+
+Sub MC7MapParsijoo_onMapLoad
+	Log("MapLoaded")
+End Sub
+
+Sub MC7MapParsijoo_onMapClicked(PGeoPoint As MC7MapParsijooGeoPoint)
+	Log(PGeoPoint.Latitude & " , " & PGeoPoint.Longitude)
+	Dim draw As BitmapDrawable
+	draw.Initialize(LoadBitmap(File.DirAssets , "myloc_marker.png"))
+	Marker.Initialize(MC7MapParsijoo , "Marker")
+	Marker.setTitle("Hello!").setPosition2(PGeoPoint.Latitude , PGeoPoint.Longitude).setSnippet("Friends!").setDraggable(True).setFlat(True).setIcon(draw).setOnMarkerClickListener.setOnMarkerDragListener
+	MC7MapParsijoo.addMarker(Marker , "mah")
+End Sub
+Sub MC7MapParsijoo_onMapLongClicked(PGeoPoint As MC7MapParsijooGeoPoint)
+	Log(PGeoPoint.Latitude)
+End Sub
+
+Sub Marker_onMarkerClick(PMarker As MC7MapParsijooMarker)
+	Log(PMarker.Title)
+	'MC7MapParsijoo.RemoveMarker(PMarker)
+	MarkerSelector = PMarker
+	PMarker.showInfoWindow
+End Sub
+Sub Marker_onMarkerDrag(PMarker As MC7MapParsijooMarker)
+	Log(PMarker.Position.Latitude)
+End Sub
+Sub Marker_onMarkerDragStart(PMarker As MC7MapParsijooMarker)
+	Log(PMarker.Position.Latitude)
+End Sub
+Sub Marker_onMarkerDragEnd(PMarker As MC7MapParsijooMarker)
+	Log(PMarker.Position.Latitude)
+End Sub
+
+Sub MC7MapParsijoo_onMapLocationResult(PLocationResult As MC7MapParsijooLocationResult)
+	Log(PLocationResult.Latitude)
+End Sub
+
+
+
+
