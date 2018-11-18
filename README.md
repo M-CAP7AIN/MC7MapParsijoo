@@ -6,16 +6,15 @@
 **Library 'Parsijoo Map' For Basic4Android , B4A**
 
 # Help
-| API | 
-|--|--|
-| http://developers.parsijoo.ir/dashboard/ |
-| http://developers.parsijoo.ir/service/map |
+**API**
+http://developers.parsijoo.ir/dashboard/
+http://developers.parsijoo.ir/service/map/
 	
-
+------------------------------------------------------------
  1. Update **SDK** (B4A)  
  2. Extract '**res.rar**'  to Project Directory
  3. Extract '**Library1.3.rar**' to B4A Library
-
+------------------
 **USE API :**
 Open '**Manifest Editor**' B4A **&** Put This Code **&** Raplace '**api_key**'
 
