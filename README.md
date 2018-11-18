@@ -6,10 +6,10 @@
 **Library 'Parsijoo Map' For Basic4Android , B4A**
 
 # Help
-**API :**
-[http://developers.parsijoo.ir/dashboard/](http://developers.parsijoo.ir/dashboard/)
-	[http://developers.parsijoo.ir/service/map](http://developers.parsijoo.ir/service/map)
-	
+| API | 
+|--|--|
+| http://developers.parsijoo.ir/dashboard/ |
+| http://developers.parsijoo.ir/service/map |
 	
 
  1. Update **SDK** (B4A)  
