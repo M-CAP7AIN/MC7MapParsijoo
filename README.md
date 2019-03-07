@@ -7,7 +7,7 @@
 
 # Help
 **API**
-http://developers.parsijoo.ir/dashboard/ →→
+http://developers.parsijoo.ir/dashboard/ <br/>
 http://developers.parsijoo.ir/service/map/
 	
 ------------------------------------------------------------
