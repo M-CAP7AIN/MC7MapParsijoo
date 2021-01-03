@@ -37,6 +37,6 @@ Open '**Manifest Editor**' B4A **&** Put This Code **&** Raplace '**api_key**'
 # About
 |* | Address |
 |--|--|
-|Blog | http://mranchor.mihanblog.com |
+|Blog | http://ictcaptain.blog.ir/ |
 |Aparat   | https://www.aparat.com/MCAP7AIN |
 |Telegram | https://t.me/MCAP7AIN |
